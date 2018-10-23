@@ -1,0 +1,3 @@
+1. End User --- Register and Login,View My Profile
+
+2. Social Media Admin --- Login,View end users

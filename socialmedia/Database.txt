@@ -1,0 +1,180 @@
+create database connectingsocialmedia;
+
+
+
+use connectingsocialmedia;
+
+
+
+CREATE TABLE admin(
+
+ username VARCHAR(50),
+
+ password VARCHAR(50)
+
+) ;
+
+
+insert into admin values ('admin','admin');
+
+
+
+CREATE TABLE ecommerce(
+
+ username VARCHAR(50),
+
+ password VARCHAR(50)
+
+) ;
+
+
+insert into ecommerce values ('ecommerce','ecommerce');
+
+
+
+
+
+CREATE TABLE user(
+ 
+ id int(11) NOT NULL auto_increment,
+
+  username varchar(45) default NULL,
+
+  password varchar(45) default NULL,
+
+  email varchar(45) default NULL,
+
+  mobile varchar(45) default NULL,
+
+  address varchar(45) default NULL,
+
+  dob varchar(45) default NULL,
+
+  gender varchar(45) default NULL,
+
+  pincode varchar(45) default NULL,
+
+  status varchar(45) default NULL,
+
+  image longblob,
+
+  PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+CREATE TABLE categories(
+
+si_no int(11) NOT NULL auto_increment,
+
+ categorie VARCHAR(50),
+
+PRIMARY KEY  (si_no)
+
+) ;
+
+
+CREATE TABLE posts(
+
+id int(11) NOT NULL auto_increment,
+
+p_name text,
+
+p_price text,
+
+p_desc text,
+
+p_image longblob,
+
+categorie text,
+
+rank text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+
+
+CREATE TABLE search(
+
+id int(11) NOT NULL auto_increment,
+
+user text,
+
+p_name text,
+
+categorie text,
+
+keyword text,
+
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+
+
+
+CREATE TABLE userreviews(
+
+id int(11) NOT NULL auto_increment,
+
+rec_by text,
+
+rec_details text,
+
+p_name text,
+
+categorie text,
+dt text,
+
+PRIMARY KEY  (id)
+
+) ;
+
+CREATE TABLE `request` (
+  `id` int(11) NOT NULL auto_increment,
+  `requestfrom` varchar(45) default NULL,
+  `requestto` varchar(45) default NULL,
+  `dt` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `postrecommendtofriend` (
+  `id` int(11) NOT NULL auto_increment,
+  `recommendfrom` varchar(45) default NULL,
+  `recommendto` varchar(45) default NULL,
+  `p_name` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `account`(
+  `account_no` varchar(15) default NULL ,
+  `user` varchar(45) default NULL,
+  `address` varchar(45) default NULL,
+  `email` varchar(45) default NULL,
+ `mobile` varchar(11) default NULL,
+  `branch` varchar(45) default NULL,
+  `amount`  int(15) NOT NULL,
+PRIMARY KEY(`account_no`)
+);
+
+CREATE TABLE `purchase`(
+  `id` int(11) NOT NULL auto_increment,
+  `account_no` varchar(15) default NULL ,
+  `user` varchar(45) default NULL,
+ `p_name` varchar(11) default NULL,
+  `amount`  int(15) NOT NULL,
+PRIMARY KEY(`id`)
+);
+
